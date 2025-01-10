@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.btn-custom {
+  @apply flex w-[265px] h-[58px] text-white font-[700] font-roboto px-[50px] py-2.5 rounded-[50px] bg-[#ff93b4] shadow-[0px_10px_15px_0px_rgba(46,46,50,0.18)];
+}

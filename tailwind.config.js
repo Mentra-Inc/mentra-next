@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        roboto: ['var(--font-roboto)', 'sans-serif'], // Use your custom property
+        roboto: ['var(--font-roboto-flex)', 'sans-serif'], // Use your custom property
       },
     },
   },

@@ -1,11 +1,13 @@
 import Image from 'next/image'
 import { Button, ButtonGroup } from '@nextui-org/button'
+import MenuBar from './MenuBar'
 
 const Hero = () => {
   const handleScroll = () => {}
 
   return (
-    <div className=" w-full h-screen bg-[#98c4fc]">
+    <div className=" w-full h-screen ">
+      <MenuBar />
       {/*Hero*/}
       <div className="max-w-[1440px] mx-auto px-8 flex flex-row justify-center items-center h-screen">
         <Image
@@ -30,6 +32,21 @@ const Hero = () => {
             <Button className="btn-custom">Build Your MVP Today</Button>
           </div>
         </div>
+        <svg
+          className="absolute -z-10"
+          xmlns="http://www.w3.org/2000/svg"
+          width="100%"
+          height="120%"
+          viewBox="0 0 1440 991"
+          fill="none"
+          preserveAspectRatio="none"
+        >
+          <path
+            opacity="0.6"
+            d="M0 919.326V0H1440V991C1389.01 887.931 1160.51 781.901 1009.46 919.326C858.403 1056.75 744.563 952.105 672.077 919.326C593.482 883.785 481.534 761.169 341.597 919.326C229.649 1045.85 67.2204 972.045 0 919.326Z"
+            fill="#4B9DFE"
+          />
+        </svg>
       </div>
     </div>
   )

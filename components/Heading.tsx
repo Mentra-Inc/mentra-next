@@ -1,8 +1,8 @@
-function Heading(props: { title: string, color: string }) {
-    const { title, color } = props;
+import { Typography } from "@mui/material";
 
+function Heading({ title, color }: { title: string, color: string }) {
     return (
-        <h1 className={`text-[50px] font-black text-[${color}]`}>{title}</h1>
+        <Typography className={`font-black text-[${color}]`} variant="h1" sx={{ fontSize: "3em", fontWeight: 900, color }}>{title}</Typography>
     );
 }
 

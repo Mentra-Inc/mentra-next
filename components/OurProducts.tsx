@@ -4,7 +4,7 @@ import { Button, ButtonGroup } from '@nextui-org/button';
 
 function OurProducts() {
     return (
-        <Box sx={{ height: 742, width: 1180, mx: "auto", mt: 4 }}>
+        <Box sx={{ height: 742, width: 1180, mx: "auto", mt: 4 }} id="services">
             <Box sx={{ height: "100%", display: "flex", flexDirection: "column", alignItems: "center", mb: 4 }}>
                 <Heading title="What We Offer" color="#0D378B" />
 

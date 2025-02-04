@@ -4,7 +4,7 @@ import Heading from "./Heading";
 
 function AboutUs() {
     return (
-        <Box sx={{ maxWidth: 1265, mx: "auto", mt: 24, height: 500 }}>
+        <Box sx={{ maxWidth: 1265, mx: "auto", mt: 24, height: 500 }} id="about-us">
             <Heading title="Turning Education Into Action" color="#0D378B" />
             <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <Box sx={{ maxWidth: 560 }}>

@@ -2,7 +2,7 @@ import React from 'react'
 
 const MenuBar = () => {
   return (
-    <div className="w-full h-[63px] flex justify-between items-center bg-[#1D5AD5] px-20">
+    <div className="w-full h-[63px] flex justify-between items-center bg-[#1D5AD5] px-20 fixed top-0 z-[99]">
       <div>
         <img
           src="/mentra_logo.png"
@@ -12,13 +12,13 @@ const MenuBar = () => {
       </div>
       <ul className="flex text-[15px] font-roboto font-[700] text-white w-1/4 justify-between">
         <li>
-          <a href="/">Home</a>
+          <a href="#home">Home</a>
         </li>
         <li>
-          <a href="/">About Us</a>
+          <a href="#about-us">About Us</a>
         </li>
         <li>
-          <a href="/">Services</a>
+          <a href="#services">Services</a>
         </li>
         <li>
           <a href="/">Contact</a>

@@ -5,7 +5,7 @@ const Hero = () => {
   const handleScroll = () => {}
 
   return (
-    <div className="w-full h-screen bg-[#98c4fc]">
+    <div className="w-full h-screen bg-[#98c4fc]" id="home">
       {/*Hero*/}
       <div className="max-w-[1440px] mx-auto px-8 flex flex-row justify-center items-center h-screen">
         <Image

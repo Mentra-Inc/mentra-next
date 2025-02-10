@@ -11,8 +11,8 @@ function OurProducts() {
                 <Heading title="What We Offer" color="#0D378B" />
 
                 <Box sx={{ display: "flex", justifyContent: "space-between", width: "100%", my: 8 }}>
-                    {productData.map(({ cardTitle, listItems} : { cardTitle: string, listItems: string[] }) => (
-                        <ProductCard cardTitle={cardTitle} listItems={listItems} />
+                    {productData.map(({ id, cardTitle, listItems} : { id: string, cardTitle: string, listItems: ({ id: string, text: string })[] }) => (
+                        <ProductCard key={id} cardTitle={cardTitle} listItems={listItems} />
                     ))}
                 </Box>
 

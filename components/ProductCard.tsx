@@ -1,6 +1,6 @@
 import { Card, CardContent, Typography } from "@mui/material";
 
-function ProductCard({ cardTitle, listItems }: { cardTitle: string, listItems: string[] }) {
+function ProductCard({ cardTitle, listItems }: { cardTitle: string, listItems: ({ id: string, text: string })[] }) {
     return (
         <Card sx={{ width: 575, borderRadius: 2, bgcolor: "#1D5AD5", p: 6 }}>
             <CardContent sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}>
@@ -9,10 +9,10 @@ function ProductCard({ cardTitle, listItems }: { cardTitle: string, listItems: s
                 </Typography>
 
                 <ul style={{ listStyleType: "disc", paddingLeft: 20, color: "white" }}>
-                    {listItems.map((item, index) => (
-                        <li key={index}>
+                    {listItems.map(({ id, text} : { id: string, text: string }) => (
+                        <li key={id}>
                             <Typography variant="body1" sx={{ color: "white", textAlign: "center", fontSize: "1.2em", lineHeight: "2.5em" }}>
-                                {item}
+                                {text}
                             </Typography>
                         </li>
                     ))}

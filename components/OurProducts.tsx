@@ -3,6 +3,7 @@ import Heading from "./Heading";
 import { Button } from '@nextui-org/button';
 import productData from "@/lib/productData";
 import ProductCard from "./ProductCard";
+import { ProductCardProps } from "@/types/productTypes";
 
 function OurProducts() {
     return (
@@ -11,7 +12,7 @@ function OurProducts() {
                 <Heading title="What We Offer" color="#0D378B" />
 
                 <Box sx={{ display: "flex", justifyContent: "space-between", width: "100%", my: 8 }}>
-                    {productData.map(({ id, cardTitle, listItems} : { id: string, cardTitle: string, listItems: ({ id: string, text: string })[] }) => (
+                    {productData.map(({ id, cardTitle, listItems} : ProductCardProps) => (
                         <ProductCard key={id} cardTitle={cardTitle} listItems={listItems} />
                     ))}
                 </Box>

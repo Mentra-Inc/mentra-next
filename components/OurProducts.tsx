@@ -1,6 +1,7 @@
 import { Box, Typography, Card, CardContent } from "@mui/material";
 import Heading from "./Heading";
 import { Button, ButtonGroup } from '@nextui-org/button';
+import productData from "@/lib/productData";
 
 function OurProducts() {
     return (
@@ -9,21 +10,9 @@ function OurProducts() {
                 <Heading title="What We Offer" color="#0D378B" />
 
                 <Box sx={{ display: "flex", justifyContent: "space-between", width: "100%", my: 8 }}>
-                    <ProductCard 
-                        cardTitle="Mentorship & Real-World Training Program" 
-                        listItems={[
-                            "Hands-on experience working on real projects commissioned by investor clients.",
-                            "Personalized one-on-one mentorship to prepare graduates for industry demands."
-                        ]}
-                    />
-
-                    <ProductCard 
-                        cardTitle="Affordable MVP Development for Businesses" 
-                        listItems={[
-                            "Cost-effective or free website development tailored to your startup's needs.",
-                            "Collaborate with skilled graduates eager to bring your ideas to life."
-                        ]}
-                    />
+                    {productData.map(({ cardTitle, listItems} : { cardTitle: string, listItems: string[] }) => (
+                        <ProductCard cardTitle={cardTitle} listItems={listItems} />
+                    ))}
                 </Box>
 
                 <Button className="btn-custom">

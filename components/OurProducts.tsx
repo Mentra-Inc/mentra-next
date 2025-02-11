@@ -1,27 +1,31 @@
-import { Box } from "@mui/material";
+import { Box, Container, Stack, useMediaQuery, useTheme } from "@mui/material";
 import Heading from "./Heading";
 import { Button } from '@nextui-org/button';
 import productData from "@/lib/productData";
 import ProductCard from "./ProductCard";
 import { ProductCardProps } from "@/types/productTypes";
+import { SPACING } from "@/lib/stylingConstants";
 
 function OurProducts() {
+    const theme = useTheme();
+
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     return (
-        <Box sx={{ height: 742, width: 1180, mx: "auto", mt: 4 }} id="services">
-            <Box sx={{ height: "100%", display: "flex", flexDirection: "column", alignItems: "center", mb: 4 }}>
+        <Container id="services">
+            <Stack spacing={SPACING.SM_SPACING} alignItems='center' textAlign='center'>
                 <Heading title="What We Offer" color="#0D378B" />
 
-                <Box sx={{ display: "flex", justifyContent: "space-between", width: "100%", my: 8 }}>
+                <Stack spacing={SPACING.XS_SPACING} direction={ isMobile ? 'column' : 'row'}>
                     {productData.map(({ id, cardTitle, listItems} : ProductCardProps) => (
                         <ProductCard key={id} cardTitle={cardTitle} listItems={listItems} />
                     ))}
-                </Box>
+                </Stack>
 
                 <Button className="btn-custom">
                     Explore our services
                 </Button>
-            </Box>
-        </Box>
+            </Stack>
+        </Container>
     );
 }
 

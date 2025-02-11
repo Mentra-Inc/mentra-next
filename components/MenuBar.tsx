@@ -9,6 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
 import { MouseEvent, useEffect, useState } from 'react';
 import Link from 'next/link';
+import { SPACING, SIZES } from '@/lib/stylingConstants';
 
 export default function ButtonAppBar() {
   const theme = useTheme();
@@ -37,17 +38,17 @@ export default function ButtonAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" sx={{ backgroundColor: "#1D5AD5" }}>
-        <Toolbar sx={{ justifyContent: "space-between", px: 4 }} disableGutters>
+        <Toolbar sx={{ justifyContent: "space-between", px: SPACING.SM_SPACING }} disableGutters>
           <Image 
             src='/mentra_logo.png'
-            width={68}
-            height={50}
-            alt='Mentra Inc Logo'
+            width={SIZES.LOGO_IMG.WIDTH}
+            height={SIZES.LOGO_IMG.HEIGHT}
+            alt='Mentra Inc LOGO_IMG'
           />
 
           {!isMobile ?
             (
-              <Box sx={{ display: "flex", gap: 2 }}>
+              <Box sx={{ display: "flex", gap: SPACING.XS_SPACING }}>
                 <Button href="#home" sx={{ color: "white", fontWeight: 700 }}>
                   Home
                 </Button>

@@ -8,18 +8,33 @@ function AboutUs() {
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('lg'));
 
     return (
-        <Box sx={{ my: SPACING.SECTION_MARGIN_Y, mx: 'auto', px: SPACING.SM_SPACING, display: 'flex', 'justifyContent': 'center' }} id="about-us">
+        <Box id="about-us"
+            sx={{ 
+                mt: SPACING.XL_SPACING,
+                mb: SPACING.MD_SPACING,
+                mx: 'auto', px: SPACING.SM_SPACING, 
+                display: 'flex', 
+                justifyContent: 'center' 
+            }}
+        >
             <Stack 
                 direction={isSmallScreen ? "column-reverse" : "row"} 
                 spacing={SPACING.SM_SPACING} 
                 alignItems="center"
             >
-                <Stack spacing={SPACING.SM_SPACING} textAlign={isSmallScreen ? "center" : "left"}>
-                    <Heading title="Turning Education Into Action" color="#0D378B" />
+                <Stack 
+                    spacing={SPACING.SM_SPACING} 
+                    textAlign={isSmallScreen ? "center" : "left"}
+                >
+                    <Heading title="Turning Education Into Action" color={COLORS.PRIMARY} />
 
                     <Typography 
                         variant="body1" 
-                        sx={{ lineHeight: SPACING.TEXT_LINE_HEIGHT, fontSize: FONT_SIZES.BODY, maxWidth: isSmallScreen ? '100%' : SIZES.ABOUT_US_TEXT.MAX_WIDTH }}
+                        sx={{ 
+                            lineHeight: SPACING.TEXT_LINE_HEIGHT, 
+                            fontSize: FONT_SIZES.BODY, 
+                            maxWidth: isSmallScreen ? '100%' : SIZES.ABOUT_US_TEXT.MAX_WIDTH 
+                        }}
                     >
                         At Mentra, we bridge the gap between learning and earning. By providing mentorship, 
                         real-world experience, and affordable MVP development services, we empower graduates 
@@ -28,7 +43,11 @@ function AboutUs() {
 
                     <Typography 
                         variant="h6" 
-                        sx={{ fontWeight: "bold", color: "#0D378B", opacity: COLORS.TEXT_OPACITY }}
+                        sx={{ 
+                            fontWeight: "bold", 
+                            color: COLORS.PRIMARY, 
+                            opacity: COLORS.TEXT_OPACITY
+                        }}
                     >
                         From Learning to Earning: Where Careers and Ideas Take Shape.
                     </Typography>
@@ -37,7 +56,7 @@ function AboutUs() {
                 <Stack>
                     <Image
                         src="/about_us_img.png"
-                        alt="profile"
+                        alt="About Us Image"
                         width={SIZES.ABOUT_US_IMG.WIDTH} // have to define a starting size, but the image is still responsive because of Stack.
                         height={SIZES.ABOUT_US_IMG.HEIGHT}
                     />

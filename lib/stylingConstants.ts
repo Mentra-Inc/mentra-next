@@ -6,14 +6,17 @@ export const COLORS = {
 };
   
 export const SPACING = {
-    SECTION_MARGIN_Y: 24,
     TEXT_LINE_HEIGHT: 3,
     XS_SPACING: 2,
     SM_SPACING: 6,
+    MD_SPACING: 12,
+    LG_SPACING: 18,
+    XL_SPACING: 24,
 };
   
 export const FONT_SIZES = {
-    HEADING: "3em",
+    HEADING_LG: "3em",
+    HEADING_SM: '2.5em',
     BODY: "1.2em",
     SUBHEADING: "1.5em",
     PRODUCT_TEXT: "1.2em",

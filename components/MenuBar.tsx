@@ -4,16 +4,15 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Image from 'next/image';
-import { Button, Menu, MenuItem, useMediaQuery, useTheme } from '@mui/material';
+import { Button, Menu, MenuItem, styled, useMediaQuery, useTheme } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
 import { MouseEvent, useEffect, useState } from 'react';
 import Link from 'next/link';
-import { SPACING, SIZES } from '@/lib/stylingConstants';
+import { SPACING, SIZES, COLORS } from '@/lib/stylingConstants';
 
 export default function ButtonAppBar() {
   const theme = useTheme();
-  // for screens smaller than 960px
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const [anchorElNav, setAnchorElNav] = useState<HTMLElement | null>(null);
@@ -35,9 +34,14 @@ export default function ButtonAppBar() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const NavButton = styled(Button)({
+    color: 'white',
+    fontWeight: 700
+  });
+
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" sx={{ backgroundColor: "#1D5AD5" }}>
+      <AppBar position="fixed" sx={{ backgroundColor: COLORS.SECONDARY }}>
         <Toolbar sx={{ justifyContent: "space-between", px: SPACING.SM_SPACING }} disableGutters>
           <Image 
             src='/mentra_logo.png'
@@ -49,25 +53,17 @@ export default function ButtonAppBar() {
           {!isMobile ?
             (
               <Box sx={{ display: "flex", gap: SPACING.XS_SPACING }}>
-                <Button href="#home" sx={{ color: "white", fontWeight: 700 }}>
-                  Home
-                </Button>
+                <NavButton href="#home">Home</NavButton>
 
-                <Button href="#about-us" sx={{ color: "white", fontWeight: 700 }}>
-                  About Us
-                </Button>
+                <NavButton href="#about-us">About Us</NavButton>
+                
+                <NavButton href="#services">Services</NavButton>
 
-                <Button href="#services" sx={{ color: "white", fontWeight: 700 }}>
-                  Services
-                </Button>
-
-                <Button href="/" sx={{ color: "white", fontWeight: 700 }}>
-                  Contact
-                </Button>
+                <NavButton href="/">Contact</NavButton>
             </Box>
             ) : 
             (
-              <Box sx={{ position: 'relative', float: 'right' }}>
+              <Box>
                   <IconButton 
                     size="large"
                     onClick={handleOpenNavMenu}

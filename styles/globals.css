@@ -3,5 +3,27 @@
 @tailwind utilities;
 
 .btn-custom {
-  @apply hover:bg-[#FF9F0A] flex w-[265px] h-[58px] text-white font-[700] font-roboto px-[50px] py-2.5 rounded-[50px] bg-[#ff93b4] shadow-[0px_10px_15px_0px_rgba(46,46,50,0.18)];
+  @apply max-w-[265px] max-h-[58px] hover:bg-[#FF9F0A] flex justify-center items-center text-white font-[700] font-roboto px-[50px] py-2.5 rounded-[50px] bg-[#ff93b4] shadow-[0px_10px_15px_0px_rgba(46,46,50,0.18)];
+}
+
+/* Custom Shape (wave) Divider */
+.custom-shape-divider-bottom-1738675425 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: translateY(98%);
+}
+
+.custom-shape-divider-bottom-1738675425 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 107px;
+}
+
+.custom-shape-divider-bottom-1738675425 .shape-fill {
+  fill: #98C4FC;
 }

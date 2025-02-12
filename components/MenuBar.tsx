@@ -11,7 +11,7 @@ import { MouseEvent, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { SPACING, SIZES, COLORS } from '@/lib/stylingConstants';
 
-export default function ButtonAppBar() {
+export default function MenuBar() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -47,7 +47,7 @@ export default function ButtonAppBar() {
             src='/mentra_logo.png'
             width={SIZES.LOGO_IMG.WIDTH}
             height={SIZES.LOGO_IMG.HEIGHT}
-            alt='Mentra Inc LOGO_IMG'
+            alt='Mentra Inc Logo'
           />
 
           {!isMobile ?

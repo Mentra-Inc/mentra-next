@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Box, Typography, Stack, useMediaQuery, useTheme } from "@mui/material";
 import WaveDivider from "./WaveDivider";
-import { COLORS, SIZES, SPACING, FONT_SIZES } from "@/lib/stylingConstants";
+import { SIZES, SPACING, FONT_SIZES, TEXT } from "@/lib/stylingConstants";
 import Heading from "./Heading";
 
 export default function Hero() {
@@ -12,12 +12,12 @@ export default function Hero() {
     return (
         <Box sx={{ 
             minHeight: '100vh', 
-            backgroundColor: COLORS.BACKGROUND, 
+            backgroundColor: theme.palette.background.default, 
             position: 'relative', 
             display: "flex", 
             justifyContent: 'center', 
             alignItems: 'center' 
-        }} id="home">
+        }}>
             <Box sx={{ 
                 display: 'flex', 
                 gap: isSmallLaptop ? SPACING.SM_SPACING : SPACING.MD_SPACING, 
@@ -40,9 +40,9 @@ export default function Hero() {
                     textAlign={isSmallLaptop ? 'center' : 'left'}
                 >
                     <Stack spacing={SPACING.XS_SPACING}>
-                        <Heading title='Empowering Graduates.' color={COLORS.PRIMARY} />
-                        <Heading title='Supporting Businesses.' color={COLORS.PRIMARY} />
-                        <Heading title='Transforming Careers.' color={COLORS.PRIMARY} />
+                        <Heading title='Empowering Graduates.' color={theme.palette.primary.main} />
+                        <Heading title='Supporting Businesses.' color={theme.palette.primary.main} />
+                        <Heading title='Transforming Careers.' color={theme.palette.primary.main} />
                     </Stack>
 
                     <Typography 
@@ -50,10 +50,10 @@ export default function Hero() {
                         sx={{ 
                             fontSize: FONT_SIZES.BODY, 
                             fontWeight: 600, 
-                            color: COLORS.PRIMARY, 
+                            color: theme.palette.primary.main, 
                             my: SPACING.SM_SPACING, 
                             maxWidth: SIZES.ABOUT_US_TEXT.MAX_WIDTH ,
-                            opacity: COLORS.TEXT_OPACITY
+                            opacity: TEXT.TEXT_OPACITY
                         }}
                     >
                         From Learning to Earning: Mentra bridges the gap between academic knowledge and real-world success.

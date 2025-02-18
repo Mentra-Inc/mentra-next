@@ -1,10 +1,3 @@
-export const COLORS = {
-    PRIMARY: "#0D378B",
-    SECONDARY: "#1D5AD5",
-    BACKGROUND: "#98c4fc",
-    TEXT_OPACITY: 0.8,
-};
-  
 export const SPACING = {
     TEXT_LINE_HEIGHT: 3,
     XS_SPACING: 2,
@@ -18,8 +11,7 @@ export const FONT_SIZES = {
     HEADING_LG: "3em",
     HEADING_SM: '2.5em',
     BODY: "1.2em",
-    SUBHEADING: "1.5em",
-    PRODUCT_TEXT: "1.2em",
+    SUBHEADING: "1.5em"
 };
   
 export const SIZES = {
@@ -29,5 +21,9 @@ export const SIZES = {
 
     PRODUCT_CARD: { MAX_WIDTH: 575 },
     ABOUT_US_TEXT: { MAX_WIDTH: 630 },
+};
+
+export const TEXT = {
+    TEXT_OPACITY: 0.8
 };
   

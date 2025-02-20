@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Box, Typography, Stack, useTheme } from "@mui/material";
 import WaveDivider from "./WaveDivider";
-import { SIZES, SPACING, FONT_SIZES, TEXT } from "@/lib/stylingConstants";
 import Heading from "./Heading";
 
 export default function Hero() {
@@ -22,19 +21,19 @@ export default function Hero() {
                 sx={{
                     display: "flex",
                     gap: {
-                        xs: SPACING.SM_SPACING,
-                        lg: SPACING.MD_SPACING
+                        xs: theme.spacing(6),
+                        lg: theme.spacing(12)
                     },
                     flexDirection: {
                         xs: "column",
                         lg: "row"
                     },
                     py: {
-                        xs: SPACING.MD_SPACING,
+                        xs: theme.spacing(12),
                         lg: 0
                     },
                     px: {
-                        xs: SPACING.XS_SPACING,
+                        xs: theme.spacing(2),
                         lg: 0
                     },
                     alignItems: {
@@ -46,20 +45,20 @@ export default function Hero() {
                 <Stack>
                     <Image
                         src="/hero_img.png"
-                        width={SIZES.HERO_IMG.WIDTH}
-                        height={SIZES.HERO_IMG.HEIGHT}
+                        width={theme.custom.sizes.heroImg.width}
+                        height={theme.custom.sizes.heroImg.height}
                         alt="Hero Image"
                     />
                 </Stack>
 
                 <Stack
-                    spacing={SPACING.MD_SPACING}
+                    spacing={theme.spacing(12)}
                     textAlign={{
                         xs: "center",
                         lg: "left"
                     }}
                 >
-                    <Stack spacing={SPACING.XS_SPACING}>
+                    <Stack spacing={theme.spacing(2)}>
                         <Heading title="Empowering Graduates." />
                         <Heading title="Supporting Businesses." />
                         <Heading title="Transforming Careers." />
@@ -68,12 +67,12 @@ export default function Hero() {
                     <Typography
                         variant="h2"
                         sx={{
-                            fontSize: FONT_SIZES.BODY,
+                            fontSize: theme.typography.body1.fontSize,
                             fontWeight: 600,
                             color: theme.palette.primary.main,
-                            my: SPACING.SM_SPACING,
-                            maxWidth: SIZES.ABOUT_US_TEXT.MAX_WIDTH,
-                            opacity: TEXT.TEXT_OPACITY
+                            my: theme.spacing(6),
+                            maxWidth: theme.custom.sizes.aboutUsText.maxWidth,
+                            opacity: theme.typography.body1.opacity
                         }}
                     >
                         From Learning to Earning: Mentra bridges the gap between academic knowledge and real-world success.
@@ -89,7 +88,7 @@ export default function Hero() {
                             lg: "space-between"
                         }}
                         alignItems="center"
-                        spacing={SPACING.XS_SPACING}
+                        spacing={theme.spacing(2)}
                     >
                         <button className="btn-custom">Start Your Journey</button>
                         <button className="btn-custom">Build Your MVP Today</button>

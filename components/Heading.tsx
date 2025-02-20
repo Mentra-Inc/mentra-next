@@ -1,4 +1,3 @@
-import { FONT_SIZES } from "@/lib/stylingConstants";
 import { HeadingProps } from "@/types/headingTypes";
 import { Typography, useTheme } from "@mui/material";
 
@@ -10,14 +9,14 @@ export default function Heading({ title }: HeadingProps) {
             variant="h1"
             sx={{ 
                 fontSize: {
-                    xs: FONT_SIZES.HEADING_SM,
-                    lg: FONT_SIZES.HEADING_LG
+                    xs: theme.typography.h2.fontSize,
+                    lg: theme.typography.h1.fontSize
                 },
                 fontWeight: 900,
                 color: theme.palette.primary.main, 
                 whiteSpace: {
-                    'md': 'wrap',
-                    'lg': 'nowrap'
+                    md: 'wrap',
+                    lg: 'nowrap'
                 }
             }}
         >

@@ -40,9 +40,9 @@ export default function Hero() {
                     textAlign={isSmallLaptop ? 'center' : 'left'}
                 >
                     <Stack spacing={SPACING.XS_SPACING}>
-                        <Heading title='Empowering Graduates.' color={theme.palette.primary.main} />
-                        <Heading title='Supporting Businesses.' color={theme.palette.primary.main} />
-                        <Heading title='Transforming Careers.' color={theme.palette.primary.main} />
+                        <Heading title='Empowering Graduates.' />
+                        <Heading title='Supporting Businesses.' />
+                        <Heading title='Transforming Careers.' />
                     </Stack>
 
                     <Typography 

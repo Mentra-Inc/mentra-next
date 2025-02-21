@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Box, Typography, Stack, useTheme } from "@mui/material";
 import WaveDivider from "./WaveDivider";
 import Heading from "./Heading";
+import CustomButton from "./CustomButton";
 
 export default function Hero() {
     const theme = useTheme();
@@ -14,7 +15,8 @@ export default function Hero() {
                 position: "relative",
                 display: "flex",
                 justifyContent: "center",
-                alignItems: "center"
+                alignItems: "center",
+                width: '100vw'
             }}
         >
             <Box
@@ -42,12 +44,25 @@ export default function Hero() {
                     }
                 }}
             >
-                <Stack>
+                <Stack
+                    sx={{
+                        maxWidth: "100%",
+                        width: {
+                            xs: "90%",
+                            sm: "80%",
+                            lg: theme.custom.sizes.heroImg.width
+                        },
+                    }}
+                >
                     <Image
                         src="/hero_img.png"
+                        alt="Hero Image"
                         width={theme.custom.sizes.heroImg.width}
                         height={theme.custom.sizes.heroImg.height}
-                        alt="Hero Image"
+                        style={{
+                            width: "100%",
+                            height: "auto"
+                        }}
                     />
                 </Stack>
 
@@ -90,8 +105,8 @@ export default function Hero() {
                         alignItems="center"
                         spacing={theme.spacing(2)}
                     >
-                        <button className="btn-custom">Start Your Journey</button>
-                        <button className="btn-custom">Build Your MVP Today</button>
+                        <CustomButton>Start Your Journey</CustomButton>
+                        <CustomButton>Build Your MVP Today</CustomButton>
                     </Stack>
                 </Stack>
             </Box>

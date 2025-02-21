@@ -10,7 +10,7 @@ const theme = createTheme({
         },
         background: {
             default: '#98c4fc'
-        }
+        },
     },
     spacing: 4,
     typography: {
@@ -37,6 +37,18 @@ const theme = createTheme({
             logoImg: { width: 68, height: 50 },
             productCard: { maxWidth: 575 },
             aboutUsText: { maxWidth: 630 }
+        },
+        button: {
+            maxWidth: "290px",
+            maxHeight: "58px",
+            paddingX: "50px",
+            paddingY: "20px",
+            borderRadius: "50px",
+            boxShadow: "0px 10px 15px rgba(46,46,50,0.18)",
+        },
+        colors: {
+            customButtonBg: "#ff93b4",
+            customButtonHover: "#FF9F0A"
         }
     }
 });

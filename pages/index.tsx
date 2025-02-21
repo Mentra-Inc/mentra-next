@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <ThemeProvider theme={theme}>
       <main>
-        <MenuBar />
+        {/* <MenuBar /> */}
         <Hero />
       </main>
     </ThemeProvider>

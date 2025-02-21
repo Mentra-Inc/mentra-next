@@ -9,7 +9,19 @@ declare module '@mui/material/styles' {
         logoImg: { width: number; height: number };
         productCard: { maxWidth: number };
         aboutUsText: { maxWidth: number };
-      };
+      },
+      button: {
+        maxWidth: string;
+        maxHeight: string;
+        paddingX: string;
+        paddingY: string;
+        borderRadius: string;
+        boxShadow: string;
+      },
+      colors: {
+        customButtonBg: string;
+        customButtonHover: string;
+      }
     };
   }
 
@@ -21,7 +33,19 @@ declare module '@mui/material/styles' {
         logoImg?: { width: number; height: number };
         productCard?: { maxWidth: number };
         aboutUsText?: { maxWidth: number };
-      };
+      },
+      button?: {
+        maxWidth?: string;
+        maxHeight?: string;
+        paddingX?: string;
+        paddingY?: string;
+        borderRadius?: string;
+        boxShadow?: string;
+      },
+      colors?: {
+        customButtonBg?: string;
+        customButtonHover?: string;
+      }
     };
   }
 }

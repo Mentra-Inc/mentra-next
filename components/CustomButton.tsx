@@ -1,7 +1,7 @@
 import { Button, useTheme } from "@mui/material";
 import { ReactNode } from "react";
 
-interface CustomButtonProps {
+type CustomButtonProps = {
   children: ReactNode;
 }
 

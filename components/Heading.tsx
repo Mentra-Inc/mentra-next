@@ -1,5 +1,8 @@
-import { HeadingProps } from "@/types/headingTypes";
 import { Typography, useTheme } from "@mui/material";
+
+type HeadingProps = {
+    title: string;
+};
 
 export default function Heading({ title }: HeadingProps) {
     const theme = useTheme();

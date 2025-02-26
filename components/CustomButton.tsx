@@ -1,33 +1,31 @@
-import { Button, useTheme } from "@mui/material";
+import { Button } from "@mui/material";
 import { ReactNode } from "react";
 
 type CustomButtonProps = {
   children: ReactNode;
-}
+};
 
 function CustomButton({ children }: Readonly<CustomButtonProps>) {
-  const theme = useTheme(); // Access the theme
-
   return (
     <Button
       variant="contained"
       sx={{
-        maxWidth: theme.custom.button.maxWidth,
-        maxHeight: theme.custom.button.maxHeight,
+        maxWidth: "290px",
+        maxHeight: "58px",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         textTransform: "none",
         fontWeight: 700,
         fontFamily: "Roboto, sans-serif",
-        px: theme.custom.button.paddingX,
-        py: theme.custom.button.paddingY,
-        borderRadius: theme.custom.button.borderRadius,
-        backgroundColor: theme.custom.colors.customButtonBg,
+        px: "50px",
+        py: "20px",
+        borderRadius: "50px",
+        backgroundColor: "#ff93b4",
         color: "white",
-        boxShadow: theme.custom.button.boxShadow,
+        boxShadow: "0px 10px 15px rgba(46,46,50,0.18)",
         "&:hover": {
-          backgroundColor: theme.custom.colors.customButtonHover,
+          backgroundColor: "#FF9F0A",
         },
       }}
     >

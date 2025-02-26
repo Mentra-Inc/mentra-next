@@ -10,18 +10,10 @@ export default function Heading({ title }: HeadingProps) {
     return (
         <Typography 
             variant="h1"
-            sx={{ 
-                fontSize: {
-                    xs: theme.typography.h2.fontSize,
-                    lg: theme.typography.h1.fontSize
-                },
-                fontWeight: 900,
-                color: theme.palette.primary.main, 
-                whiteSpace: {
-                    md: 'wrap',
-                    lg: 'nowrap'
-                }
-            }}
+            fontSize={{ xs: "2.5em", lg: "3em" }}
+            fontWeight={900}
+            color={theme.palette.primary.main}
+            whiteSpace={{ md: "wrap", lg: "nowrap" }}
         >
             {title}
         </Typography>

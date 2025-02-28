@@ -56,10 +56,10 @@ export default function MenuBar() {
 
           {!isMobile ? (
             <Box sx={{ display: "flex", gap: 2 }}>
-              <NavButton href="#home">Home</NavButton>
+              <NavButton href="#">Home</NavButton>
               <NavButton href="#about-us">About Us</NavButton>
               <NavButton href="#services">Services</NavButton>
-              <NavButton href="/">Contact</NavButton>
+              <NavButton href="#contact">Contact</NavButton>
             </Box>
           ) : (
             <Box>

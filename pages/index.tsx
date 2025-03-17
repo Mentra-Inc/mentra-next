@@ -4,6 +4,7 @@ import OurProducts from '@/components/OurProducts';
 import MenuBar from '@/components/MenuBar';
 import theme from '@/theme/theme';
 import { ThemeProvider } from '@mui/material';
+import SimplePathToSuccess from '@/components/SimplePathToSucess';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <Hero />
         <AboutUs />
         <OurProducts />
+        <SimplePathToSuccess />
       </main>
     </ThemeProvider>
   )

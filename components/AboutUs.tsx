@@ -8,7 +8,7 @@ export default function AboutUs() {
         <Box
             id="about-us"
             sx={{
-                mt: 24,
+                mt: 32,
                 mb: 12,
                 mx: "auto",
                 px: 6,

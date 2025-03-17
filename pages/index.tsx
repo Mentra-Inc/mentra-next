@@ -1,3 +1,4 @@
+import AboutUs from '@/components/AboutUs';
 import Hero from '@/components/Hero';
 import MenuBar from '@/components/MenuBar';
 import theme from '@/theme/theme';
@@ -9,6 +10,7 @@ export default function Home() {
       <main style={{ overflow: 'hidden' }}>
         <MenuBar />
         <Hero />
+        <AboutUs />
       </main>
     </ThemeProvider>
   )

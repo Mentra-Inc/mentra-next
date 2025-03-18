@@ -1,11 +1,19 @@
-import { Hero } from '@/components'
-import MenuBar from '@/components/MenuBar'
+import AboutUs from '@/components/AboutUs';
+import Hero from '@/components/Hero';
+import OurProducts from '@/components/OurProducts';
+import MenuBar from '@/components/MenuBar';
+import theme from '@/theme/theme';
+import { ThemeProvider } from '@mui/material';
 
 export default function Home() {
   return (
-    <main className="overflow-hidden">
-      <MenuBar />
-      <Hero />
-    </main>
+    <ThemeProvider theme={theme}>
+      <main style={{ overflow: 'hidden' }}>
+        <MenuBar />
+        <Hero />
+        <AboutUs />
+        <OurProducts />
+      </main>
+    </ThemeProvider>
   )
 }

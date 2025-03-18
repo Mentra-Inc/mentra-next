@@ -3,14 +3,16 @@ import { ReactNode } from "react";
 
 type CustomButtonProps = {
   children: ReactNode;
+  width?: string | number;
 };
 
-function CustomButton({ children }: Readonly<CustomButtonProps>) {
+export default function CustomButton({ children, width = "290px" }: Readonly<CustomButtonProps>) {
   return (
     <Button
       variant="contained"
       sx={{
-        maxWidth: "290px",
+        maxWidth: width,
+        width: "100%",
         maxHeight: "58px",
         display: "flex",
         justifyContent: "center",
@@ -18,8 +20,7 @@ function CustomButton({ children }: Readonly<CustomButtonProps>) {
         textTransform: "none",
         fontWeight: 700,
         fontFamily: "Roboto, sans-serif",
-        px: "50px",
-        py: "20px",
+        p: 5,
         borderRadius: "50px",
         backgroundColor: "#ff93b4",
         color: "white",
@@ -33,5 +34,3 @@ function CustomButton({ children }: Readonly<CustomButtonProps>) {
     </Button>
   );
 }
-
-export default CustomButton;

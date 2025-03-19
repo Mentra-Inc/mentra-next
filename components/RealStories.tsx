@@ -24,6 +24,8 @@ const testimonials: Omit<StoryCardProps, 'cardIndex'>[] = [
     { id: "0j1k2l", name: "James Anderson", role: "Graduate", message: "Mentra's industry connections opened doors I never thought possible!" }
 ];
 
+export const marqueeDuration = 60; // in seconds
+export const cardCount = testimonials.length;
 
 export default function RealStories() {
     return (

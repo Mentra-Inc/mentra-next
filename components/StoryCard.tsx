@@ -1,5 +1,5 @@
 import { Box, Card, CardContent, Stack, Typography, useTheme } from "@mui/material";
-import { StoryCardProps } from "./RealStories";
+import { cardCount, marqueeDuration, StoryCardProps } from "./RealStories";
 
 export default function StoryCard({ cardIndex, name, role, message } : StoryCardProps) {
     const theme = useTheme();
@@ -11,12 +11,12 @@ export default function StoryCard({ cardIndex, name, role, message } : StoryCard
                 width: '342px', // absolute lengths are needed for the marquee to work (it's still responsive)
                 height: '390px',
                 position: 'absolute',
-                left: 'calc(342px * 10)',
+                left: `calc(342px * ${cardCount})`,
                 animationName: 'scroll-left',
-                animationDuration: '60s',
+                animationDuration: `${marqueeDuration}s`,
                 animationTimingFunction: 'linear',
                 animationIterationCount: 'infinite',
-                animationDelay: `calc(60s / 10 * (10 - ${cardIndex}) * -1)`
+                animationDelay: `calc(${marqueeDuration}s / ${cardCount} * (${cardCount} - ${cardIndex}) * -1)`
             }}
         >
             <CardContent sx={{ height: '100%', p: 0 }}>

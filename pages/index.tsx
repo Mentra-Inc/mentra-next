@@ -5,6 +5,7 @@ import MenuBar from '@/components/MenuBar';
 import theme from '@/theme/theme';
 import { ThemeProvider } from '@mui/material';
 import SimplePathToSuccess from '@/components/SimplePathToSucess';
+import WhyChooseMentra from '@/components/WhyChooseMentra';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <AboutUs />
         <OurProducts />
         <SimplePathToSuccess />
+        <WhyChooseMentra />
       </main>
     </ThemeProvider>
   )

@@ -5,6 +5,7 @@ import MenuBar from '@/components/MenuBar';
 import theme from '@/theme/theme';
 import { ThemeProvider } from '@mui/material';
 import SimplePathToSuccess from '@/components/SimplePathToSucess';
+import RealStories from '@/components/RealStories';
 
 export default function Home() {
   return (
@@ -13,8 +14,9 @@ export default function Home() {
         <MenuBar />
         <Hero />
         <AboutUs />
-        <OurProducts />
+        <OurProducts />  
         <SimplePathToSuccess />
+        <RealStories />
       </main>
     </ThemeProvider>
   )

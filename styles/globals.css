@@ -23,3 +23,10 @@ body {
 .waveDivider .shape-fill {
   fill: #98C4FC;
 }
+
+/* Marquee */
+@keyframes scroll-left {
+  to {
+    left: -342px;
+  }
+}

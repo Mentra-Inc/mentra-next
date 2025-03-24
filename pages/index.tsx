@@ -6,6 +6,7 @@ import theme from '@/theme/theme';
 import { ThemeProvider } from '@mui/material';
 import SimplePathToSuccess from '@/components/SimplePathToSucess';
 import RealStories from '@/components/RealStories';
+import JoinTheMentraMovement from '@/components/JoinTheMentraMovement';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <OurProducts />  
         <SimplePathToSuccess />
         <RealStories />
+        <JoinTheMentraMovement />
       </main>
     </ThemeProvider>
   )

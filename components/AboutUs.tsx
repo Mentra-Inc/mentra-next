@@ -1,5 +1,6 @@
 import { Box, Stack, Typography, useTheme } from "@mui/material";
 import Heading from "./Heading";
+import Subtitle from "./Subtitle";
 
 export default function AboutUs() {
     const theme = useTheme();
@@ -29,7 +30,7 @@ export default function AboutUs() {
                     <Typography
                         variant="body1"
                         sx={{
-                            lineHeight: 3,
+                            lineHeight: { xs: 2.5, sm: 3 },
                             fontSize: "1.2em",
                             maxWidth: { xs: "100%", lg: 630 },
                         }}
@@ -39,16 +40,7 @@ export default function AboutUs() {
                         and support businesses in their growth journey.
                     </Typography>
 
-                    <Typography
-                        variant="h6"
-                        sx={{
-                            fontWeight: "bold",
-                            color: theme.palette.primary.main,
-                            opacity: 0.8,
-                        }}
-                    >
-                        From Learning to Earning: Where Careers and Ideas Take Shape.
-                    </Typography>
+                    <Subtitle>From Learning to Earning: Where Careers and Ideas Take Shape.</Subtitle>
                 </Stack>
 
                 <Box

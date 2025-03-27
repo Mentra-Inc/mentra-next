@@ -7,6 +7,7 @@ import { ThemeProvider } from '@mui/material';
 import SimplePathToSuccess from '@/components/SimplePathToSucess';
 import RealStories from '@/components/RealStories';
 import WhyChooseMentra from '@/components/WhyChooseMentra';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <SimplePathToSuccess />
         <RealStories />
         <WhyChooseMentra />
+        <Footer />
       </main>
     </ThemeProvider>
   )

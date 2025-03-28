@@ -6,18 +6,18 @@ type FooterLink = {
     id: string;
     href: string;
     label: string;
-    col: number;
-    row: number;
+    col: { lg: number, xl: number };
+    row: { lg: number, xl: number };
     external: boolean;
 };
 
 const linksData: FooterLink[] = [
-    { id: 'about', href: '/about', label: 'About Us', col: 1, row: 1, external: false },
-    { id: 'services', href: '/services', label: 'Services', col: 1, row: 2, external: false },
-    { id: 'contact', href: '/contact', label: 'Contact', col: 1, row: 3, external: false },
-    { id: 'linkedin', href: 'https://www.linkedin.com', label: 'LinkedIn', col: 3, row: 1, external: true },
-    { id: 'instagram', href: 'https://www.instagram.com', label: 'Instagram', col: 3, row: 2, external: true },
-    { id: 'facebook', href: 'https://www.facebook.com', label: 'Facebook', col: 3, row: 3, external: true },
+    { id: 'about', href: '/#about-us', label: 'About Us', col: { lg: 1, xl: 1 }, row: { lg: 1, xl: 1 }, external: false },
+    { id: 'services', href: '/#services', label: 'Services', col: { lg: 2, xl: 1 }, row: { lg: 1, xl: 2 }, external: false },
+    { id: 'contact', href: '/#contact', label: 'Contact', col: { lg: 3, xl: 1 }, row: { lg: 1, xl: 3 }, external: false },
+    { id: 'linkedin', href: 'https://www.linkedin.com', label: 'LinkedIn', col: { lg: 1, xl: 3 }, row: { lg: 2, xl: 1 }, external: true },
+    { id: 'instagram', href: 'https://www.instagram.com', label: 'Instagram', col: { lg: 2, xl: 3 }, row: { lg: 2, xl: 2 }, external: true },
+    { id: 'facebook', href: 'https://www.facebook.com', label: 'Facebook', col: { lg: 3, xl: 3 }, row: { lg: 2, xl: 3 }, external: true },
 ];
 
 export default function Footer() {
@@ -28,15 +28,20 @@ export default function Footer() {
             sx={{
                 backgroundColor: theme.palette.secondary.main,
                 color: '#fff',
-                px: 32,
-                height: '489px',
+                px: { xs: 4, lg: 16, xl: 32},
+                py: 20,
                 display: 'flex',
                 alignItems: 'center',
+                justifyContent: 'center'
             }}>
                 <Box
                     sx={{
                         display: 'flex',
-                        gap: 24
+                        justifyContent: 'space-around',
+                        flexDirection: { xs: 'column', md: 'row' },
+                        alignItems: { xs: 'center', md: 'normal' },
+                        width: '100%',
+                        textAlign: { xs: 'center', md: 'left' }
                     }}>
                         <Box
                             component="img"
@@ -46,7 +51,7 @@ export default function Footer() {
                             height={128}
                         />
 
-                        <Stack justifyContent="space-between" maxWidth={260} gap={16}>
+                        <Stack justifyContent="space-between" maxWidth={260} gap={{ xs: 4, md: 16 }}>
                             <Typography variant="h6" fontSize={22}>
                                 Mentra: Turning Knowledge into Action.
                             </Typography>
@@ -66,56 +71,59 @@ export default function Footer() {
                             </Stack>
                         </Stack>
                         
-                        <Stack justifyContent='space-between' ml={52} mr={12} sx={{ opacity: 0.75 }}>
+                        <Stack justifyContent='space-between' mr={{ xs: 0, md: 12 }} my={{ xs: 8, md: 0 }} sx={{ opacity: 0.75 }}>
                             <Box
                                 sx={{
                                     display: 'grid',
-                                    gridTemplateColumns: 'repeat(5, 1fr)',
-                                    gridTemplateRows: 'repeat(5, 1fr)',
+                                    gridTemplateColumns: 'repeat(3, 1fr)',
+                                    gridTemplateRows: 'repeat(3, 1fr)',
                                     gap: 4
                                 }}
                             >
                                 {linksData.map(({ id, href, external, col, row, label }: FooterLink) => (
-                                    <Link
+                                    <Typography
                                         key={id}
-                                        href={href}
-                                        target={external ? '_blank' : '_self'}
-                                        style={{
-                                            gridColumn: col,
-                                            gridRow: row,
-                                            padding: 2,
-                                            color: 'white',
-                                            textDecoration: 'none',
+                                        sx={{
+                                            gridColumn: { lg: col.lg, xl: col.xl },
+                                            gridRow: { lg: row.lg, xl: row.xl }
                                         }}
                                     >
-                                        <Typography>
+                                        <Link
+                                            href={href}
+                                            target={external ? '_blank' : '_self'}
+                                            style={{
+                                                color: 'white',
+                                                textDecoration: 'none',
+                                            }}
+                                        >
                                             {label}
-                                        </Typography>
-                                    </Link>
+                                        </Link>
+                                    </Typography>
+                                    
                                 ))}
                             </Box>
 
-                            <Typography color="white" sx={{ gridColumn: 'span 3', gridRowStart: 5 }}>
+                            <Typography color="white">
                                 © 2024 Mentra Inc. All rights reserved.
                             </Typography>
                         </Stack>
 
 
-                    <Link
-                        style={{
-                            width: 60,
-                            height: 60,
-                            backgroundColor: 'white',
-                            borderRadius: '100%',
-                            cursor: 'pointer',
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center'
-                        }}
-                        href='#'
-                    >
-                        <ArrowUpwardIcon sx={{ color: "#86D8FF", fontSize: 30 }} />
-                    </Link>
+                        <Link
+                            style={{
+                                width: 60,
+                                height: 60,
+                                backgroundColor: 'white',
+                                borderRadius: '100%',
+                                cursor: 'pointer',
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center'
+                            }}
+                            href='#'
+                        >
+                            <ArrowUpwardIcon sx={{ color: "#86D8FF", fontSize: 30 }} />
+                        </Link>
                 </Box>
         </Box>
     )

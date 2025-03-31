@@ -2,28 +2,6 @@ body {
   margin: 0;
 }
 
-/* Wave Divider */
-.waveDivider {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: translateY(98%);
-}
-
-.waveDivider svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 107px;
-}
-
-.waveDivider .shape-fill {
-  fill: #98C4FC;
-}
-
 /* Marquee */
 @keyframes scroll-left {
   to {

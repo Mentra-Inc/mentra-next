@@ -7,6 +7,7 @@ import { ThemeProvider } from '@mui/material';
 import SimplePathToSuccess from '@/components/SimplePathToSucess';
 import RealStories from '@/components/RealStories';
 import WhyChooseMentra from '@/components/WhyChooseMentra';
+import JoinTheMentraMovement from '@/components/JoinTheMentraMovement';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
         <SimplePathToSuccess />
         <RealStories />
         <WhyChooseMentra />
+        <JoinTheMentraMovement />
         <Footer />
       </main>
     </ThemeProvider>

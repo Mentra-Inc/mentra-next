@@ -1,7 +1,8 @@
 import { Box, Typography, Stack, useTheme } from "@mui/material";
-import WaveDivider from "./WaveDivider";
 import Heading from "./Heading";
 import CustomButton from "./CustomButton";
+import HeroWaveDivider from "./wave-dividers/HeroWaveDivider";
+
 
 export default function Hero() {
     const theme = useTheme();
@@ -65,7 +66,7 @@ export default function Hero() {
                     </Stack>
                 </Stack>
             </Box>
-            <WaveDivider />
+            <HeroWaveDivider />
         </Box>
     );
 }

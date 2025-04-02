@@ -23,33 +23,63 @@ const linksData: FooterLink[] = [
 export default function Footer() {
     const theme = useTheme();
 
+    const GoUpButton = () => (
+        <Link
+            style={{
+                width: 60,
+                height: 60,
+                backgroundColor: 'white',
+                borderRadius: '100%',
+                cursor: 'pointer',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',  
+            }}
+            href='#'
+        >
+            <ArrowUpwardIcon sx={{ color: "#86D8FF", fontSize: 30 }} />
+        </Link>
+    );
+
+    const MentraLogo = () => (
+        <Box
+            component="img"
+            src="/mentra_logo_big.png"
+            alt="Mentra Inc Logo"
+            width={174}
+            height={128}
+        />
+    );
+
     return (
         <Box
             sx={{
                 backgroundColor: theme.palette.secondary.main,
                 color: '#fff',
-                px: { xs: 4, lg: 16, xl: 32},
-                py: 20,
+                px: { xs: 4, lg: 16, xl: 32 },
+                py: { xs: 10, md: 20 },
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                flexDirection: 'column'
             }}>
+                <Box sx={{ display: { xs: 'block', md: 'none' }}}>
+                    <MentraLogo />
+                </Box>
+
                 <Box
                     sx={{
                         display: 'flex',
-                        justifyContent: 'space-around',
-                        flexDirection: { xs: 'column', md: 'row' },
-                        alignItems: { xs: 'center', md: 'normal' },
+                        justifyContent: 'space-between',
+                        flexDirection: { xs: 'column', sm: 'row' },
+                        alignItems: { xs: 'center', sm: 'flex-end', md: 'normal' },
                         width: '100%',
-                        textAlign: { xs: 'center', md: 'left' }
+                        textAlign: { xs: 'center', md: 'left' },
+                        gap: { xs: 8, sm: 0 }
                     }}>
-                        <Box
-                            component="img"
-                            src="/mentra_logo_big.png"
-                            alt="Mentra Inc Logo"
-                            width={174}
-                            height={128}
-                        />
+                        <Box sx={{ display: { xs: 'none', md: 'block' }}}>
+                            <MentraLogo />
+                        </Box>
 
                         <Stack justifyContent="space-between" maxWidth={260} gap={{ xs: 4, md: 16 }}>
                             <Typography variant="h6" fontSize={22}>
@@ -71,7 +101,7 @@ export default function Footer() {
                             </Stack>
                         </Stack>
                         
-                        <Stack justifyContent='space-between' mr={{ xs: 0, md: 12 }} my={{ xs: 8, md: 0 }} sx={{ opacity: 0.75 }}>
+                        <Stack justifyContent='space-between' mr={{ xs: 0, md: 12 }} sx={{ opacity: 0.75 }}>
                             <Box
                                 sx={{
                                     display: 'grid',
@@ -99,7 +129,6 @@ export default function Footer() {
                                             {label}
                                         </Link>
                                     </Typography>
-                                    
                                 ))}
                             </Box>
 
@@ -109,21 +138,12 @@ export default function Footer() {
                         </Stack>
 
 
-                        <Link
-                            style={{
-                                width: 60,
-                                height: 60,
-                                backgroundColor: 'white',
-                                borderRadius: '100%',
-                                cursor: 'pointer',
-                                display: 'flex',
-                                justifyContent: 'center',
-                                alignItems: 'center'
-                            }}
-                            href='#'
-                        >
-                            <ArrowUpwardIcon sx={{ color: "#86D8FF", fontSize: 30 }} />
-                        </Link>
+                        <Box sx={{ display: { xs: 'none', md: 'block' }}}>
+                            <GoUpButton />
+                        </Box>
+                </Box>
+                <Box sx={{ display: { xs: 'block', md: 'none' }}} mt={8}>
+                    <GoUpButton />
                 </Box>
         </Box>
     )

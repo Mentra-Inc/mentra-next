@@ -9,7 +9,7 @@ export default function Hero() {
 
     return (
         <Box
-            minHeight="100vh"
+            minHeight="92vh"
             bgcolor={theme.palette.background.default}
             position="relative"
             display="flex"
@@ -20,7 +20,7 @@ export default function Hero() {
                 display="flex"
                 gap={{ xs: 6, lg: 12 }}
                 flexDirection={{ xs: "column", lg: "row" }}
-                py={{ xs: 12, lg: 0 }}
+                py={{ xs: 24, lg: 0 }}
                 px={{ xs: 2, lg: 0 }}
                 alignItems={{ xs: "center", lg: "normal" }}
             >
@@ -28,7 +28,7 @@ export default function Hero() {
                     component="img"
                     src="/hero_img.png"
                     alt="Hero Image"
-                    width={494}
+                    maxWidth={494}
                     height={442}
                     style={{
                         width: "100%",

@@ -53,6 +53,7 @@ export default function Footer() {
 
     return (
         <Box
+            id="contact"
             sx={{
                 backgroundColor: theme.palette.secondary.main,
                 color: '#fff',

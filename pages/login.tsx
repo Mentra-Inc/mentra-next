@@ -1,9 +1,14 @@
-import { Box, FormControl, Input, InputLabel, FormHelperText, Button } from "@mui/material";
+import { Box, Input, Button, Typography } from "@mui/material";
 import PersonIcon from '@mui/icons-material/Person';
 import { LockOutlined } from "@mui/icons-material";
-import { ReactElement } from "react";
+import { ReactElement, useState } from "react";
+import { useRouter } from "next/navigation";
+import WarningIcon from '@mui/icons-material/Warning';
 
 export default function Login() {
+    const [error, setError] = useState<string | null>(null);
+    const router = useRouter();
+
     const FormInput = ({ icon, type, placeholder, name }: { icon: ReactElement, type: string, placeholder: string, name: string }) => {
         return (
             <Box
@@ -27,19 +32,23 @@ export default function Login() {
 
     const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        const formData = new FormData(event.currentTarget);
 
+        const formData = new FormData(event.currentTarget);
         const email = formData.get('user-email');
         const password = formData.get('user-password');
 
-        const response = await fetch('http://localhost:8080/auth/login', {
+        let res = await fetch('/api/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ "email": email?.toString(), "password": password?.toString() }),
+            body: JSON.stringify({ email, password })
         });
-        const res = await response.json();
-
-        console.log(res);
+        
+        if(res.ok) {
+            router.push('/');
+        } else {
+            const err = await res.json();
+            setError(err.error || "Login Failed.");
+        }
     };
 
     return (
@@ -50,9 +59,28 @@ export default function Login() {
                 backgroundSize: "cover",
                 height: "100vh",
                 display: "flex",
+                flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center"
             }}>
+                {error && <Box
+                    sx={{
+                       maxWidth: "400px",
+                       height: "50px",
+                       width: "100%",
+                       px: 2,
+                       backgroundColor: "#FFBABA",
+                       borderLeft: "8px solid #FF5252",
+                       borderRadius: "8px",
+                       display: "flex",
+                       alignItems: "center",
+                       boxSizing: 'border-box',
+                       mb: 3
+                    }}>
+                       <WarningIcon sx={{ color: "#FF5252", mr: 2 }} />
+                       <Typography color="#FF5252" fontWeight="bold" >{error}</Typography>
+                   </Box>
+                }
                 <Box
                     sx={{
                         maxHeight: "425px",

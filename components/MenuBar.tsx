@@ -7,11 +7,14 @@ import { Button, Menu, MenuItem, styled, useMediaQuery, useTheme, IconButton } f
 import MenuIcon from '@mui/icons-material/Menu';
 import { MouseEvent, useEffect, useState } from 'react';
 import Link from 'next/link';
+import PersonIcon from '@mui/icons-material/Person';
+import { User } from '@/types/applicationTypes';
 
 export default function MenuBar() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
+  const [user, setUser] = useState<User | null>(null);
   const [anchorElNav, setAnchorElNav] = useState<HTMLElement | null>(null);
 
   const handleOpenNavMenu = (event: MouseEvent<HTMLElement>) => {
@@ -23,9 +26,18 @@ export default function MenuBar() {
   };
 
   useEffect(() => {
+    const fetchUser = async () => {
+      const res = await fetch('/api/currentUser');
+      const resUser = await res.json() as User;
+
+      setUser(resUser);
+    };
+
     const handleResize = () => {
       handleCloseNavMenu(); // Close menu when screen resizes
     };
+
+    fetchUser();
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -60,6 +72,8 @@ export default function MenuBar() {
               <NavButton href="#about-us">About Us</NavButton>
               <NavButton href="#services">Services</NavButton>
               <NavButton href="#contact">Contact</NavButton>
+              <NavButton><PersonIcon sx={{ mr: 2 }} /> { user?.email || "N/A" }</NavButton>
+
             </Box>
           ) : (
             <Box>
@@ -79,6 +93,9 @@ export default function MenuBar() {
                 </MenuItem>
                 <MenuItem onClick={handleCloseNavMenu}>
                   <NavLink href="#contact">Contact</NavLink>
+                </MenuItem>
+                <MenuItem onClick={handleCloseNavMenu}>
+                  Logged in as: { user?.email }
                 </MenuItem>
               </Menu>
             </Box>

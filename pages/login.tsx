@@ -87,9 +87,9 @@ export default function Login() {
                         maxWidth: "300px",
                         height: "100%",
                         width: "100%",
-                        border: "2px solid white",
+                        border: { md: "2px solid white", xs: 'none'} ,
                         borderRadius: "30px",
-                        padding: 6
+                        padding: { md: 6, xs: 0 }
                     }}>
                         <Box
                             sx={{

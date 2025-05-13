@@ -1,4 +1,4 @@
-import { Box, Input, Button, Typography } from "@mui/material";
+import { Box, Input, Button, Typography, Link } from "@mui/material";
 import PersonIcon from '@mui/icons-material/Person';
 import { LockOutlined } from "@mui/icons-material";
 import { ReactElement, useState } from "react";
@@ -37,7 +37,7 @@ export default function Register() {
         const email = formData.get('user-email');
         const name = formData.get('user-name');
         const password = formData.get('user-password');
-        const role = "Student";
+        const role = "Student"; // I don't know how the roles are picked.
 
         const res = await fetch('/api/register', {
             method: 'POST',
@@ -96,9 +96,7 @@ export default function Register() {
             }
             <Box
                 sx={{
-                    maxHeight: "450px",
                     maxWidth: "300px",
-                    height: "100%",
                     width: "100%",
                     border: { md: "2px solid white", xs: 'none'} ,
                     borderRadius: "30px",
@@ -139,6 +137,7 @@ export default function Register() {
                             REGISTER
                         </Button>
                     </form>
+                    <Typography mt={3} color="white">Already have an account? <Link href="/login" color="#8DC5E7">Login Here</Link></Typography>
                 </Box>
             </Box>
         </Box>

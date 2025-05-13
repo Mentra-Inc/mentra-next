@@ -1,4 +1,4 @@
-import { Box, Input, Button, Typography } from "@mui/material";
+import { Box, Input, Button, Typography, Link } from "@mui/material";
 import PersonIcon from '@mui/icons-material/Person';
 import { LockOutlined } from "@mui/icons-material";
 import { ReactElement, useState } from "react";
@@ -83,9 +83,7 @@ export default function Login() {
                 }
                 <Box
                     sx={{
-                        maxHeight: "425px",
                         maxWidth: "300px",
-                        height: "100%",
                         width: "100%",
                         border: { md: "2px solid white", xs: 'none'} ,
                         borderRadius: "30px",
@@ -125,6 +123,7 @@ export default function Login() {
                                         LOGIN
                                     </Button>
                                 </form>
+                                <Typography mt={3} color="white">Don't have an account? <Link href="/register" color="#8DC5E7">Register Here</Link></Typography>
                         </Box>
                 </Box>
         </Box>

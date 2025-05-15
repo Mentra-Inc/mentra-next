@@ -1,34 +1,14 @@
-import { Box, Input, Button, Typography, Link } from "@mui/material";
+import { Box, Button, Typography, Link } from "@mui/material";
 import PersonIcon from '@mui/icons-material/Person';
 import { LockOutlined } from "@mui/icons-material";
-import { ReactElement, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import WarningIcon from '@mui/icons-material/Warning';
+import FormInput from "@/components/FormInput";
 
 export default function Register() {
     const [error, setError] = useState<string | null>(null);
     const router = useRouter();
-
-    const FormInput = ({ icon, type, placeholder, name }: { icon: ReactElement, type: string, placeholder: string, name: string }) => {
-        return (
-            <Box
-                sx={{
-                    border: "2px solid white",
-                    borderRadius: "8px",
-                    width: "100%",
-                    display: "flex",
-                    alignItems: "center",
-                    p: 1.5,
-                    maxWidth: "100%",
-                    boxSizing: "border-box",
-                    mb: 3
-                }}
-            >
-                {icon}
-                <Input sx={{ color: "white", width: "100%", fontSize: "18px" }} name={name} type={type} placeholder={placeholder} disableUnderline autoComplete="off" />
-            </Box>
-        );
-    };
 
     const handleRegister = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();

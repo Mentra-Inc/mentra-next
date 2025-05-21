@@ -3,8 +3,8 @@ import PersonIcon from '@mui/icons-material/Person';
 import { LockOutlined } from "@mui/icons-material";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import WarningIcon from '@mui/icons-material/Warning';
 import FormInput from "@/components/FormInput";
+import ErrorCard from "@/components/ErrorCard";
 
 export default function Login() {
     const [error, setError] = useState<string | null>(null);
@@ -43,24 +43,7 @@ export default function Login() {
                 alignItems: "center",
                 justifyContent: "center"
             }}>
-                {error && <Box
-                    sx={{
-                       maxWidth: "400px",
-                       height: "50px",
-                       width: "100%",
-                       px: 2,
-                       backgroundColor: "#FFBABA",
-                       borderLeft: "8px solid #FF5252",
-                       borderRadius: "8px",
-                       display: "flex",
-                       alignItems: "center",
-                       boxSizing: 'border-box',
-                       mb: 3
-                    }}>
-                       <WarningIcon sx={{ color: "#FF5252", mr: 2 }} />
-                       <Typography color="#FF5252" fontWeight="bold" >{error}</Typography>
-                   </Box>
-                }
+                {error && <ErrorCard error={error} />}
                 <Box
                     sx={{
                         maxWidth: "300px",
